@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from apps.core.views import index,about
+from apps.core.views import index, about
 
-urlpatterns = [
+urlpatterns = [  
     path('', include('apps.store.urls')),
     path('',index,name="index"),
+    path('about/', about ,name='about'),
     path('admin/', admin.site.urls),
     path('',include("apps.core.urls" )), # home page
 ]
